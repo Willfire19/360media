@@ -20,7 +20,11 @@
 @import "bootstrap";
 
 // Bootstrap body padding for fixed navbar
-body { padding-top: 60px; }
+body { 
+	padding-top: 60px;
+	margin: 0px;
+	overflow: hidden;
+}
 
 @import "bootswatch/paper/bootswatch";
 

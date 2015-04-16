@@ -9,6 +9,8 @@ gem 'pg'
 gem 'sass-rails', '~> 4.0.3'
 gem 'bootstrap-sass'
 gem 'bootswatch-rails'
+# ThreeJS to render the 360 content
+gem 'threejs-rails', git: 'git://github.com/marvindanig/threejs-rails.git'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views

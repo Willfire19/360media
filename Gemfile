@@ -21,6 +21,9 @@ gem 'coffee-rails', '~> 4.0.0'
 # Devise to handle user models and authentication
 gem 'devise'
 
+# Carrierwave to handle picture uploads
+gem 'carrierwave'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

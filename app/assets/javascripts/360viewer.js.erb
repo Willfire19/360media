@@ -61,10 +61,17 @@ function init() {
 
 	// SkyBox
 
+  // alert $('#example').data('url')
+  var picture_url = $('#example').data('url');
+  console.log(picture_url);
+
 	var sphere = new THREE.Mesh(
 		new THREE.SphereGeometry(100*4, 32*4, 32*4),
 		new THREE.MeshBasicMaterial({
-			map: THREE.ImageUtils.loadTexture("<%= asset_path('marspano2.jpg') %>")
+			// map: THREE.ImageUtils.loadTexture("<%= asset_path('marspano2.jpg') %>")
+      map: THREE.ImageUtils.loadTexture( picture_url )
+
+
 		})
 	);
 

@@ -56,6 +56,6 @@ class PicturesController < ApplicationController
     end
 
     def picture_params
-      params.require(:picture).permit(:name)
+      params.require(:picture).permit(:name, :photosphere)
     end
 end

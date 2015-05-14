@@ -5,5 +5,8 @@
   <%= @picture.name %>
 </p>
 
+<p>
+	<%= image_tag @picture.photosphere_url.to_s if @picture.photosphere? %>
+
 <%= link_to 'Edit', edit_picture_path(@picture) %> |
 <%= link_to 'Back', pictures_path %>

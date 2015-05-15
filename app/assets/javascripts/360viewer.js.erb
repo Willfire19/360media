@@ -1,6 +1,8 @@
 var camera, scene, renderer;
 var effect, controls;
 var element, container;
+var vr = $('#example').data('vr');
+console.log(vr);
 
 var clock = new THREE.Clock();
 
@@ -16,7 +18,9 @@ function init() {
   container = document.getElementById('example');
   container.appendChild(element);
 
-  effect = new THREE.StereoEffect(renderer);
+  if( vr == true ){
+    effect = new THREE.StereoEffect(renderer);
+  }
 
   scene = new THREE.Scene();
 
@@ -92,7 +96,9 @@ function resize() {
   camera.updateProjectionMatrix();
 
   renderer.setSize(width, height);
-  effect.setSize(width, height);
+  if( vr == true ){
+    effect.setSize(width, height);
+  }
 }
 
 function update(dt) {
@@ -104,7 +110,11 @@ function update(dt) {
 }
 
 function render(dt) {
-  effect.render(scene, camera);
+
+  renderer.render( scene, camera );
+  if( vr == true ){
+    effect.render(scene, camera);
+  }
 }
 
 function animate(t) {

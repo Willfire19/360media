@@ -11,10 +11,14 @@
 	  <%= @picture.photosphere_url.to_s%>
 	</p>
 
-	<div id="example" data-url="<%= @picture.photosphere_url.to_s %>"></div>
+	<!-- <div id="example" data-url="<%= @picture.photosphere_url.to_s %>"></div> -->
+	<%= content_tag "div", id: "example", data: {url: @picture.photosphere_url.to_s, vr: false} do %>
+	<% end %>
 
 	<%= render 'layouts/graphics' %>
 <% end %>
+
+
 
 <!-- <p>
 	<%= image_tag @picture.photosphere_url.to_s if @picture.photosphere? %>

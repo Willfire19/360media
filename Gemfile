@@ -23,7 +23,7 @@ gem 'devise'
 
 # Picture Uploads
 gem 'carrierwave'
-gem 'fog-aws'
+gem 'fog'
 
 
 

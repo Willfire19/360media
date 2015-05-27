@@ -22,7 +22,7 @@ CarrierWave.configure do |config|
     # config.root = "#{Rails.root}/tmp"
   else
     config.storage = :fog
-    config.fog_provider = 'fog' #'fog/aws'                        # required
+    # config.fog_provider = 'fog' #'fog/aws'                        # required
     config.fog_credentials = {
       provider:              'AWS',                        # required
       :aws_access_key_id     => ENV['S3_360MEDIA_KEY'],             # required

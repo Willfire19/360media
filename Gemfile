@@ -21,8 +21,11 @@ gem 'therubyracer',  platforms: :ruby
 # Devise to handle user models and authentication
 gem 'devise'
 
-# Carrierwave to handle picture uploads
+# Picture Uploads
 gem 'carrierwave'
+gem 'fog-aws'
+
+
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

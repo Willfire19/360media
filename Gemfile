@@ -23,7 +23,7 @@ gem 'devise'
 
 # Picture Uploads
 gem 'carrierwave'
-gem 'fog'
+gem 'fog', "~> 1.3.1"
 
 
 

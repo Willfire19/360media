@@ -1,22 +1,42 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @picture.name %>
-</p>
-
 <% if @picture.photosphere? %>
-	<p>
-	  <strong>Picture URL:</strong>
-	  <%= @picture.photosphere_url.to_s%>
-	</p>
 
-	<!-- <div id="example" data-url="<%= @picture.photosphere_url.to_s %>"></div> -->
-	<%= content_tag "div", id: "example", data: {url: @picture.photosphere_url.to_s, vr: false} do %>
-	<% end %>
+	<div class="row">
+		<div class="col-xs-12">
+			<!-- <div id="example" data-url="<%= @picture.photosphere_url.to_s %>"></div> -->
+			<%= content_tag "div", id: "example", style: "height: 500px; width: auto;", data: {url: @picture.photosphere_url.to_s, vr: false} do %>
+			<% end %>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">			
+			<p>
+			  <strong>Picture URL:</strong>
+			  <%= @picture.photosphere_url.to_s%>
+			</p>
+		</div>
+	</div>
 
 	<%= render 'layouts/graphics' %>
 <% end %>
+
+<div class="row">
+	<div class="col-xs-12">
+		<p>
+		  <strong>Name:</strong>
+		  <%= @picture.name %>
+		</p>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-xs-12">
+		<%= link_to 'Edit', edit_picture_path(@picture) %> |
+		<%= link_to 'Back', pictures_path %>
+	</div>
+</div>
 
 
 
@@ -26,5 +46,4 @@
 
 
 
-<%= link_to 'Edit', edit_picture_path(@picture) %> |
-<%= link_to 'Back', pictures_path %>
+

@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<% if @picture.photosphere? %>
+
+	<%= content_tag "div", id: "vr", style: "height: 100%; width: auto;", data: {url: @picture.photosphere_url.to_s, vr: true} do %>
+	<% end %>
+
+	<!-- <div class="row">
+		<div class="col-xs-12">
+			<div id="example" data-url="<%= @picture.photosphere_url.to_s %>"></div>
+			
+		</div>
+	</div> -->
+
+	<%= render 'layouts/graphics' %>
+<% end %>

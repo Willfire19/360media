@@ -1,8 +1,11 @@
 var camera, scene, renderer;
 var effect, controls;
 var element, container;
-var vr = $('#example').data('vr');
-console.log(vr);
+
+// var divId = $('#example');
+// console.log("Container div: " + divId);
+
+var vr = $('#example').data('vr') || $('#vr').data('vr');
 
 var clock = new THREE.Clock();
 
@@ -11,11 +14,12 @@ var clock = new THREE.Clock();
 init();
 animate();
 
-
+// var elvisLives = Math.PI > 4 ? "Yep" : "Nope";
 function init() {
   renderer = new THREE.WebGLRenderer();
   element = renderer.domElement;
-  container = document.getElementById('example');
+  container = (document.getElementById('example') == null) ? document.getElementById('vr') : document.getElementById('example');
+  console.log(container);
   container.appendChild(element);
 
   if( vr == true ){
@@ -66,7 +70,8 @@ function init() {
 	// SkyBox
 
   // alert $('#example').data('url')
-  var picture_url = $('#example').data('url');
+  var picture_url = $('#example').data('url') || $('#vr').data('url');
+  // var picture_url = container.data('url'); 
   console.log(picture_url);
 
   THREE.ImageUtils.crossOrigin = '';

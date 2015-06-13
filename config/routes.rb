@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :pictures
+  resources :pictures do
+    member do
+      get 'vr'
+    end
+  end
 
   devise_for :users
   get '/home' => 'static#home'

@@ -1,6 +1,6 @@
 class PicturesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
-  before_action :set_picture, only: [:show, :edit, :update, :destroy]
+  before_action :set_picture, only: [:show, :vr, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update, :destroy]
 
   respond_to :html
@@ -11,6 +11,10 @@ class PicturesController < ApplicationController
   end
 
   def show
+    respond_with(@picture)
+  end
+
+  def vr
     respond_with(@picture)
   end
 

@@ -1,6 +1,49 @@
 <h1>Listing pictures</h1>
 
-<table>
+<div class="row">
+  <div class="col-xs-10 col-xs-offset-1">
+
+    <div class="row">
+
+      <% @pictures.each do |picture| %>
+
+        <div class="col-xs-4">
+          <div class="panel  panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title"><%= link_to picture.name, picture %></h3>
+            </div>
+            <div class="panel-body">
+
+              <% if picture.photosphere? %>
+
+                <div class="row">
+                  <div class="col-xs-12">
+                    <%= image_tag picture.photosphere_url.to_s, class: "img-responsive" %>
+                  </div>
+                </div>
+
+              <% end %>
+
+              <div class="row">
+                <div class="col-xs-12">
+                  <%= link_to 'Edit', edit_picture_path(picture) %> |
+                  <%= link_to 'Try VR', vr_picture_path(picture) %>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      <% end %>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- <table>
   <thead>
     <tr>
       <th>Name</th>
@@ -18,7 +61,7 @@
       </tr>
     <% end %>
   </tbody>
-</table>
+</table> -->
 
 <br>
 

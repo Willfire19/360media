@@ -1,40 +1,36 @@
 <p id="notice"><%= notice %></p>
 
-<% if @picture.photosphere? %>
-
-	<div class="row">
-		<div class="col-xs-12">
-			<!-- <div id="example" data-url="<%= @picture.photosphere_url.to_s %>"></div> -->
-			<%= content_tag "div", id: "example", style: "height: 500px; width: auto;", data: {url: @picture.photosphere_url.to_s, vr: false} do %>
-			<% end %>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col-xs-12">			
-			<p>
-			  <strong>Picture URL:</strong>
-			  <%= @picture.photosphere_url.to_s%>
-			</p>
-		</div>
-	</div>
-
-	<%= render 'layouts/graphics' %>
-<% end %>
-
 <div class="row">
-	<div class="col-xs-12">
-		<p>
-		  <strong>Name:</strong>
-		  <%= @picture.name %>
-		</p>
-	</div>
-</div>
+	<div class="col-xs-8 col-xs-offset-2">
 
-<div class="row">
-	<div class="col-xs-12">
-		<%= link_to 'Edit', edit_picture_path(@picture) %> |
-		<%= link_to 'Back', pictures_path %>
+		<div class="panel  panel-primary">
+			<div class="panel-heading">
+				<h3 class="panel-title"><%= @picture.name %></h3>
+			</div>
+		  <div class="panel-body">
+
+				<% if @picture.photosphere? %>
+
+					<div class="row">
+						<div class="col-xs-12">
+							<!-- <div id="example" data-url="<%= @picture.photosphere_url.to_s %>"></div> -->
+							<%= content_tag "div", id: "example", style: "height: 500px; width: auto;", data: {url: @picture.photosphere_url.to_s, vr: false} do %>
+							<% end %>
+						</div>
+					</div>
+
+					<%= render 'layouts/graphics' %>
+				<% end %>
+
+				<div class="row">
+					<div class="col-xs-12">
+						<%= link_to 'Edit', edit_picture_path(@picture) %>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
 	</div>
 </div>
 

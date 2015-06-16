@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Media360</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-</head>
-<body>
-	<%= render "layouts/header" %>
+	<head>
+	  <title>Media360</title>
+	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	  <%= csrf_meta_tags %>
+	  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	</head>
+	<body>
+		<%= render "layouts/header" %>
 
-	<p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+		<div class="container">
+			<p class="notice"><%= notice %></p>
+		  <p class="alert"><%= alert %></p>
 
-	<%= yield %>
+			<%= yield %>
 
-</body>
+		</div>
+
+	</body>
 </html>

@@ -26,8 +26,12 @@
 
               <div class="row">
                 <div class="col-xs-12">
-                  <%= link_to 'Edit', edit_picture_path(picture) %> |
-                  <%= link_to 'Try VR', vr_picture_path(picture) %>
+                  <% if picture.user == current_user %>
+                    <%= link_to 'Edit', edit_picture_path(picture) %> |
+                    <%= link_to 'Try VR', vr_picture_path(picture) %>
+                  <% else %>
+                    <%= link_to 'Try VR', vr_picture_path(picture) %>
+                  <% end %>
                 </div>
               </div>
 
@@ -65,4 +69,6 @@
 
 <br>
 
-<%= link_to 'New Picture', new_picture_path %>
+<% if user_signed_in? %>
+  <%= link_to 'New Picture', new_picture_path %>
+<% end %>

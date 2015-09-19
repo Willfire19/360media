@@ -13,5 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require three
+//= require threejs/build/three
+
+//= require webvr-polyfill/build/webvr-polyfill
+//= require webvr-boilerplate/build/webvr-manager
+//= require 360viewer
 //= require_tree .

@@ -15,6 +15,9 @@
 //= require turbolinks
 //= require threejs/build/three
 
+//= require threejs/examples/js/controls/VRControls
+//= require threejs/examples/js/effects/VREffect
+
 //= require webvr-polyfill/build/webvr-polyfill
 //= require webvr-boilerplate/build/webvr-manager
 //= require 360viewer

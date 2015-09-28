@@ -1,7 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <div class="row">
-	<div class="col-xs-8 col-xs-offset-2">
+	
+	<% if @picture.photosphere? %>
+
+		<div class="col-xs-12">
+			<!-- <div id="example" data-url="<%= @picture.photosphere_url.to_s %>"></div> -->
+			<%= content_tag "div", id: "example", style: "height: 500px; width: auto;", data: {url: @picture.photosphere_url.to_s, vr: false} do %>
+			<% end %>
+		</div>
+
+		<%= render 'layouts/graphics' %>
+	<% end %>
+
+	<!-- <div class="col-xs-8 col-xs-offset-2">
 
 		<div class="panel  panel-primary">
 			<div class="panel-heading">
@@ -9,18 +21,7 @@
 			</div>
 		  <div class="panel-body">
 
-				<% if @picture.photosphere? %>
-
-					<div class="row">
-						<div class="col-xs-12">
-							<!-- <div id="example" data-url="<%= @picture.photosphere_url.to_s %>"></div> -->
-							<%= content_tag "div", id: "example", style: "height: 500px; width: auto;", data: {url: @picture.photosphere_url.to_s, vr: false} do %>
-							<% end %>
-						</div>
-					</div>
-
-					<%= render 'layouts/graphics' %>
-				<% end %>
+				
 
 				<div class="row">
 					<div class="col-xs-12">
@@ -36,7 +37,7 @@
 			</div>
 		</div>
 
-	</div>
+	</div> -->
 </div>
 
 

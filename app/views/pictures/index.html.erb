@@ -1,13 +1,13 @@
 <h1>Listing pictures</h1>
 
 <div class="row">
-  <div class="col-xs-10 col-xs-offset-1">
+  <div class="col-xs-12">
 
     <div class="row">
 
       <% @pictures.each do |picture| %>
 
-        <div class="col-xs-4">
+        <div class="col-xs-12 col-sm-6 col-md-4">
           <div class="panel  panel-primary">
             <div class="panel-heading">
               <h3 class="panel-title"><%= link_to picture.name, picture %></h3>
@@ -18,7 +18,10 @@
 
                 <div class="row">
                   <div class="col-xs-12">
-                    <%= image_tag picture.photosphere_url.to_s, class: "img-responsive" %>
+                    <%= image_tag picture.photosphere_url(:thumb).to_s, class: "img-responsive" %>
+                    <!-- <div style="height:150px; width: 300px; text-align: center;">
+                      <%= image_tag picture.photosphere_url.to_s, class: "img-responsive" %>
+                    </div> -->
                   </div>
                 </div>
 

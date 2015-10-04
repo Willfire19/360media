@@ -1,0 +1,21 @@
+{
+  "name": "360media",
+  "version": "0.0.1",
+  "homepage": "http://360media.space",
+  "authors": [
+    "willfire19 <willfire19@gmail.com>"
+  ],
+  "description": "A web app to upload and view 360 degree content",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "webvr-boilerplate": "https://github.com/borismus/webvr-boilerplate.git#0.1.1"
+  }
+}

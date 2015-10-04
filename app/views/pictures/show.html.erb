@@ -1,50 +1,28 @@
-<p id="notice"><%= notice %></p>
+<% if @picture.photosphere? %>
+		
+		<!-- <div id="example" data-url="<%= @picture.photosphere_url.to_s %>"></div> -->
+		<%= content_tag "div", id: "vr_viewer", style: "height: 500px; width: auto;", data: {url: @picture.photosphere_url.to_s} do %>
+		<% end %>
+
+	<%= render 'layouts/graphics' %>
+<% end %>
 
 <div class="row">
-	
-	<% if @picture.photosphere? %>
+	<div class="col-xs-12 col-sm-10 col-sm-offset-1">
 
-		<div class="col-xs-12">
-			<!-- <div id="example" data-url="<%= @picture.photosphere_url.to_s %>"></div> -->
-			<%= content_tag "div", id: "example", style: "height: 500px; width: auto;", data: {url: @picture.photosphere_url.to_s, vr: false} do %>
+		<div class="row">
+			<div class="col-xs-12 col-sm-8">
+				<h3><%= @picture.name %></h3>
+			</div>
+			<% if @picture.user == current_user %>
+				<div class="col-xs-12 col-sm-4">
+					<%= link_to 'Edit', edit_picture_path(@picture) %>
+				</div>
 			<% end %>
 		</div>
 
-		<%= render 'layouts/graphics' %>
-	<% end %>
-
-	<!-- <div class="col-xs-8 col-xs-offset-2">
-
-		<div class="panel  panel-primary">
-			<div class="panel-heading">
-				<h3 class="panel-title"><%= @picture.name %></h3>
-			</div>
-		  <div class="panel-body">
-
-				
-
-				<div class="row">
-					<div class="col-xs-12">
-						<% if @picture.user == current_user %>
-							<%= link_to 'Edit', edit_picture_path(@picture) %> |
-							<%= link_to 'Try VR', vr_picture_path(@picture) %>
-						<% else %>
-							<%= link_to 'Try VR', vr_picture_path(@picture) %>
-						<% end %>
-					</div>
-				</div>
-
-			</div>
-		</div>
-
-	</div> -->
+	</div>
 </div>
-
-
-
-<!-- <p>
-	<%= image_tag @picture.photosphere_url.to_s if @picture.photosphere? %>
-</p> -->
 
 
 

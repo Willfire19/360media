@@ -9,7 +9,7 @@ $(document).ready(function() {
   // var divId = $('#example');
   // console.log("Container div: " + divId);
 
-  var vr = $('#example').data('vr') || $('#vr').data('vr');
+  // var vr = $('#example').data('vr') || $('#vr').data('vr');
 
   var clock = new THREE.Clock();
 
@@ -24,7 +24,7 @@ $(document).ready(function() {
     console.log(window.devicePixelRatio);
     renderer.setPixelRatio(window.devicePixelRatio);
     element = renderer.domElement;
-    container = (document.getElementById('example') == null) ? document.getElementById('vr') : document.getElementById('example');
+    container = (document.getElementById('vr_viewer') == null) ? document.getElementById('vr') : document.getElementById('vr_viewer');
     console.log(container);
     container.appendChild(element);
 
@@ -85,7 +85,7 @@ $(document).ready(function() {
   	// SkyBox
 
     // alert $('#example').data('url')
-    var picture_url = $('#example').data('url') || $('#vr').data('url');
+    var picture_url = $('#vr_viewer').data('url') || $('#vr').data('url');
     // var picture_url = container.data('url'); 
     console.log(picture_url);
 

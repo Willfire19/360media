@@ -2,13 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#example {
+#vr_viewer {
 	//position: relative;
 	top: 0px;
 	left: 0px;
 	right: 0px;
 	bottom: 0px;
 	padding: 0px;
+	margin-left: -15px;
+	margin-right: -15px;
 }
 
 #vr {

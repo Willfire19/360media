@@ -1,8 +1,9 @@
 <% if @picture.photosphere? %>
-		
-		<!-- <div id="example" data-url="<%= @picture.photosphere_url.to_s %>"></div> -->
-		<%= content_tag "div", id: "vr_viewer", style: "height: 500px; width: auto;", data: {url: @picture.photosphere_url.to_s} do %>
-		<% end %>
+		<div class="vr_pict">
+			<!-- <div id="example" data-url="<%= @picture.photosphere_url.to_s %>"></div> -->
+			<%= content_tag "div", id: "vr_viewer", style: "height: 500px; width: auto;", data: {url: @picture.photosphere_url.to_s} do %>
+			<% end %>
+		</div>
 
 	<%= render 'layouts/graphics' %>
 <% end %>

@@ -21,11 +21,12 @@ $(document).ready(function() {
   // var elvisLives = Math.PI > 4 ? "Yep" : "Nope";
   function init() {
     renderer = new THREE.WebGLRenderer({ antialias: true });
-    console.log(window.devicePixelRatio);
+    // console.log(window.devicePixelRatio);
     renderer.setPixelRatio(window.devicePixelRatio);
     element = renderer.domElement;
+    console.log(element);
     container = (document.getElementById('vr_viewer') == null) ? document.getElementById('vr') : document.getElementById('vr_viewer');
-    console.log(container);
+    // console.log(container);
     container.appendChild(element);
 
     scene = new THREE.Scene();
@@ -58,6 +59,13 @@ $(document).ready(function() {
 
     // Create a VR manager helper to enter and exit VR mode
     manager = new WebVRManager(renderer, effect, {hideButton: false});
+    // manager.button.style.position = "relative";
+    // console.log(manager.button);
+    // console.log(manager.button.style);
+    var vr_button = $('img');
+    vr_button.css({'position': 'relative', 'bottom': '56px'});
+    console.log(vr_button);
+    $('div.vr_pict').append(vr_button);
 
     
 
@@ -87,7 +95,7 @@ $(document).ready(function() {
     // alert $('#example').data('url')
     var picture_url = $('#vr_viewer').data('url') || $('#vr').data('url');
     // var picture_url = container.data('url'); 
-    console.log(picture_url);
+    // console.log(picture_url);
 
     THREE.ImageUtils.crossOrigin = '';
   	var sphere = new THREE.Mesh(

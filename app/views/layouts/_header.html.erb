@@ -14,16 +14,33 @@
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-left">
           <li>
-            <p class="navbar-btn">
-              <% if user_signed_in? %>
-                <%= link_to "Sign Out", destroy_user_session_path, method: "delete", :class => "btn btn-default btn-danger", :style => "margin-right: 10px;" %>
-              <% else %>
-                <%= link_to "Sign In", new_user_session_path, :class => "btn btn-default btn-primary", :style => "margin-right: 10px;" %>
+            <%= link_to pictures_path do %>
+              <i class="fa fa-picture-o"></i> All Pictures
+            <% end %>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <% if user_signed_in? %>
+            <li>
+              <%= link_to new_picture_path do %>
+                <i class="fa fa-upload"></i> New Picture
               <% end %>
-            </p>
-          </li>         
+            </li>
+            <li>
+              <p class="navbar-btn">
+                <%= link_to "Sign Out", destroy_user_session_path, method: "delete", :class => "btn btn-default btn-danger navbar-spacing" %>
+              </p>
+            </li>
+          <% else %>
+            <li>
+              <p class="navbar-btn"> 
+                <%= link_to "Sign In", new_user_session_path, :class => "btn btn-default btn-primary navbar-spacing" %>
+              </p>
+            </li>
+          <% end %>
+
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

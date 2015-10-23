@@ -23,3 +23,14 @@
 	bottom: 0px;
 	padding: 0px;
 }
+
+.navbar-spacing {
+	margin-right: 10px;
+	// margin-left: 15px;
+}
+
+@media (max-width: 768px) { 
+	.navbar-spacing {
+		margin-left: 15px;
+	}
+}

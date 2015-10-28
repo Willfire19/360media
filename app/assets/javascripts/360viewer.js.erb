@@ -67,6 +67,11 @@ $(document).ready(function() {
     console.log(vr_button);
     $('div.vr_pict').append(vr_button);
 
+    var loading_animation = $('div.loading-spinner');
+    // loading_animation.css({'display': 'block'});
+    loading_animation.show();
+    $('div.vr_pict').append(loading_animation);
+
     
 
    //  function setOrientationControls(e) {
@@ -102,7 +107,9 @@ $(document).ready(function() {
   		new THREE.SphereGeometry(100*4, 32*4, 32*4),
   		new THREE.MeshBasicMaterial({
   			// map: THREE.ImageUtils.loadTexture("<%= asset_path('marspano2.jpg') %>")
-        map: THREE.ImageUtils.loadTexture( picture_url )
+        map: THREE.ImageUtils.loadTexture( picture_url, undefined, function(){
+          loading_animation.hide();
+        } )
 
 
   		})

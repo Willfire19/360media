@@ -22,4 +22,5 @@
 //= require webvr-polyfill/build/webvr-polyfill
 //= require webvr-boilerplate/build/webvr-manager
 //= require 360viewer
+//= require scroll
 //= require_tree .

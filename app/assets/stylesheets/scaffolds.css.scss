@@ -1,27 +1,9 @@
-html {
-  height: 100%;
-}
-
 body {
   background-color: #fff;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
-  height: 100%;
-}
-
-.body-content > .row:first-child {
-
-  padding-top: 60px;
-
-}
-
-nav {
-  -webkit-transition: all 1s; // Chrome
-  -moz-transition: all 1s; // Mozilla
-  -o-transition: all 1s; // Opera
-  transition: all 1s;
 }
 
 p, ol, ul, td {
@@ -84,12 +66,4 @@ div {
     font-size: 12px;
     list-style: square;
   }
-}
-
-.nav-top {
-  background-color: rgba(0, 0, 0, 0) !important;
-  -webkit-transition: all 2s; // Chrome
-  -moz-transition: all 2s; // Mozilla
-  -o-transition: all 2s; // Opera
-  transition: all 2s;
 }

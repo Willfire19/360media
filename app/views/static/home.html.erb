@@ -1,8 +1,33 @@
 <div class="row splash">
+	
 	<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
 		<div class="splash-content">	
 			<h2>360media.space</h2>
 			<h5>Home for your 360 content</h5>
+		</div>
+	</div>
+
+	<i class="scroll-down fa fa-chevron-circle-down fa-5x fa-inverse"></i>
+
+</div>
+
+<div class="row">
+	<div class="col-xs-12">
+
+		<div class="row">
+			
+			<h2 class="col-xs-12">View Uploaded 360 photos</h2>
+
+			<% @pictures.each do |picture| %>
+
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          
+          <%= render "pictures/picture_item", :picture => picture %>
+
+        </div>
+
+      <% end %>
+
 		</div>
 	</div>
 </div>
